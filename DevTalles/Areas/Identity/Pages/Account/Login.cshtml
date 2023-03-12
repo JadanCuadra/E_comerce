@@ -5,9 +5,14 @@
     ViewData["Title"] = "Conectar";
 }
 
+@*<div class="imagen">
 <a>
-    <img alt="" src="~/imagenes/Ecommerce-trends-van-2020.jpeg" />
+
+    <img alt="" src="~/imagenes/1-38.jpg" width="1100" height="270" />
+
 </a>
+</div>*@
+
 
 <h1>@ViewData["Title"]</h1>
 <div class="row">
@@ -16,48 +21,57 @@
             <form id="account" method="post">
                 <hr />
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-                
-                <div class="form-floating mb-3">                    
-                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="nombre@ejemplo.com" />
-                    <span><i class="fas fa-envelope"></i></span>
-                    <label asp-for="Input.Email" class="form-label">Correo</label>
-                    <hr />
+
+                    <a>
+                        <img src="~/imagenes/1-38.jpg" class="rounded float-start" alt="..." width="350px">
+                    </a>
+
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-envelope"></i></span>
+                    <input asp-for="Input.Email" type="text" class="form-control" placeholder="Correo electronico" autocomplete="username" aria-label="Correo" aria-describedby="basic-addon1">
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
-                <div class="form-floating mb-3">                    
-                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="Contraseña" />
-                    <span><i class="fas fa-key"></i></span>
-                    <label asp-for="Input.Password" class="form-label">Contraseña</label>
-                    <hr />
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-key"></i></span>
+                    <input asp-for="Input.Password" type="text" class="form-control" placeholder="Contraseña" autocomplete="new-password" aria-label="Contraseña" aria-describedby="basic-addon1">
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>                    
                 </div>
+
                 <div class="checkbox mb-3">
                     <label asp-for="Input.RememberMe" class="form-label">
                         <input class="form-check-input" asp-for="Input.RememberMe" />
                         @Html.DisplayNameFor(m => m.Input.RememberMe)
                     </label>
                 </div>
+
                 <div>
-                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Conectarse</button>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-dark">Conectarse</button>
                 </div>
+
                 <div>
                     <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Olvidaste tu contraseña?</a>
+                        <a id="forgot-password" asp-page="./ForgotPassword" style="color: black" >Olvidaste tu contraseña?</a>
                     </p>
                     <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Registrarse como nuevo usuario</a>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" style="color: black" >Registrarse como nuevo usuario</a>
                     </p>
                     <p>
-                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Reenviar correo electrónico de confirmación</a>
+                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation" style="color: black" >Reenviar correo electrónico de confirmación</a>
                     </p>
                 </div>
             </form>
         </section>
+
+        
+
+
     </div>
     <div class="col-md-6 col-md-offset-2">
         <section>
-            
-          
+
+
             @{
                 if ((Model.ExternalLogins?.Count ?? 0) == 0)
                 {

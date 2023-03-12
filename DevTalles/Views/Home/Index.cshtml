@@ -4,10 +4,10 @@
 
 
 
-<a href="https://www.amazon.com/-/es/">
 
-    <img alt="" src="https://m.media-amazon.com/images/I/61UQQeoWdvL._SX3000_.jpg" width="1100" height="270" />
 
+<a>
+    <img alt="" src="~/imagenes/Ecommerce-trends-van-2020.jpeg" width="1100" height="470" />
 </a>
 
 
@@ -15,7 +15,7 @@
 
 
 <div class="text-center">
-    <h1 class="display-4">E_commerce</h1>
+    <h1 class="display-4">Nuevos Productos Disponibles</h1>
    
 </div>
 
@@ -30,9 +30,9 @@
         @foreach (var item in Model.cursos)
         {
 
-           <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem;">
                 <img src="@RUTAIMAGEN.RutaImagen@item.ImagenUrl" class="card-img-top" alt="...">
-                
+
                 <div class="card-body">
                     <h5 class="card-title">@item.NombreProducto</h5>
                     <span>Precio: $@item.Precio </span>
@@ -41,6 +41,7 @@
                     <a href="#" class="btn btn-primary">Comprar</a>
                     <a class="btn btn-warning" asp-controller="Producto">Leer más</a>
                 </div>
+                
             </div>
 
         }
@@ -51,3 +52,4 @@
 
 
 </div>
+<hr />
